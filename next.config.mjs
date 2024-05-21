@@ -4,9 +4,9 @@ const nextConfig = {
         remotePatterns: [{hostname: "images.unsplash.com"},
          {hostname:"lh3.googleusercontent.com" }],
     },
-    experimental: {
-        serverActions: true,
-    }
+    // experimental: {
+    //     serverActions: true,
+    // }
 };
 
 export default nextConfig;
