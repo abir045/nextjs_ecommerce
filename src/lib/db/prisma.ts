@@ -7,6 +7,19 @@ const globalForPRisma = globalThis as unknown as {
 }
 
 
-export const prisma = globalForPRisma.prisma ?? new PrismaClient()
+ const prismaBase = globalForPRisma.prisma ?? new PrismaClient()
 
-if(process.env.NODE_ENV !== "production") globalForPRisma.prisma = prisma
+ export const prisma = prismaBase.$extends({
+    query: {
+        cart: {
+           async update({args, query}) {
+               args.data = {...args.data, updatedAt: new Date()}
+               return query(args);
+           }
+        }
+    }
+ })
+
+
+
+if(process.env.NODE_ENV !== "production") globalForPRisma.prisma = prismaBase
