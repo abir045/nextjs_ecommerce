@@ -10,7 +10,7 @@ import { PrismaClient } from "@prisma/client/extension";
 
 export const  authOptions: NextAuthOptions = {
     
-    adapter: PrismaAdapter(prisma as PrismaClient) as Adapter,
+    adapter: PrismaAdapter(prisma ) as Adapter,
     providers: [
         GoogleProvider({
             clientId: env.GOOGLE_CLIENT_ID,
