@@ -8,7 +8,7 @@ import { Adapter } from "next-auth/adapters";
 import { mergeAnonymousCartIntoUserCart } from "@/lib/db/cart";
 import { PrismaClient } from "@prisma/client/extension";
 
- export const  authOptions: NextAuthOptions = {
+   export const  authOptions: NextAuthOptions = {
     
     adapter: PrismaAdapter(prisma ) as Adapter,
     providers: [
