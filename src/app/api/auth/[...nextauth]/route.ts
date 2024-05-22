@@ -32,13 +32,12 @@ import { PrismaClient } from "@prisma/client/extension";
 
 }
 
-// export const handler = NextAuth(authOptions) 
+ const handler = NextAuth(authOptions) 
 
 // export const GET = handler.GET;
 // export const POST = handler.POST;
 
-// export {handler as GET, handler as POST, }
+ export {handler as GET, handler as POST }
 
 // export const GET = NextAuth(authOptions);
 // export const POST = NextAuth(authOptions)
-export default NextAuth(authOptions)
