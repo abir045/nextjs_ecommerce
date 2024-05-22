@@ -9,29 +9,7 @@ import { mergeAnonymousCartIntoUserCart } from "@/lib/db/cart";
 import { PrismaClient } from "@prisma/client/extension";
 import { authOptions } from "@/app/lib/auth";
 
-//    export const  authOptions: NextAuthOptions = {
-    
-//     adapter: PrismaAdapter(prisma ) as Adapter,
-//     providers: [
-//         GoogleProvider({
-//             clientId: env.GOOGLE_CLIENT_ID,
-//             clientSecret: env.GOOGLE_CLIENT_SECRET
-//         })
-//     ],
-//     callbacks: {
-//         session({session, user}) {
-//          session.user.id = user.id
-//          return session;
-//         }
-//     },
-//     events: {
-//         async signIn({user}){
-//           await mergeAnonymousCartIntoUserCart(user.id) ;
-//         }
 
-//     }
-
-// }
 
  const handler = NextAuth(authOptions) 
 
@@ -39,5 +17,4 @@ import { authOptions } from "@/app/lib/auth";
 
  export {handler as GET, handler as POST }
 
-// export const GET = NextAuth(authOptions);
-// export const POST = NextAuth(authOptions)
+
